@@ -38,3 +38,14 @@ You'll notice the following in ‘Local’ Server console.
 
 ### Step 8 - Launch Dashboard at: 
 	http://localhost:9393/dashboard
+	
+### Register custom module already in local maven
+	mvn clean install -DskipTests
+
+	dataflow:>module register --name my_custom_module --type source --uri maven:com.mycompany:mycustommodule:0.0.1-SNAPSHOT --force
+	
+### Info module
+	dataflow:>module info source:my_custom_module
+	
+### Detroy all stream
+	dataflow:>stream all destroy
